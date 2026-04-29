@@ -1,31 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Hu Xiaoming</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
-      font-family: Arial, sans-serif;
-      max-width: 850px;
-      margin: 60px auto;
-      padding: 0 24px;
-      line-height: 1.6;
+      font-family: Arial, Helvetica, sans-serif;
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 40px 24px;
+      line-height: 1.65;
       color: #222;
+      background-color: #fff;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      margin-bottom: 36px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 28px;
+    }
+
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      background-color: #eee;
     }
 
     h1 {
-      margin-bottom: 8px;
+      margin: 0;
+      font-size: 2.2em;
+    }
+
+    h2 {
+      margin-top: 42px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 6px;
+      color: #111;
+    }
+
+    h3 {
+      margin-bottom: 6px;
     }
 
     .subtitle {
       color: #555;
-      margin-top: 0;
+      margin-top: 8px;
+      margin-bottom: 10px;
     }
 
-    section {
-      margin-top: 36px;
+    nav {
+      margin-bottom: 36px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav a {
+      margin-right: 18px;
+      color: #0056b3;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
     }
 
     a {
@@ -36,45 +81,202 @@
     a:hover {
       text-decoration: underline;
     }
+
+    ul {
+      padding-left: 22px;
+    }
+
+    .paper-title {
+      font-weight: bold;
+    }
+
+    .small-text {
+      color: #666;
+      font-size: 0.95em;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+      color: #666;
+      font-size: 0.95em;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav a {
+        display: inline-block;
+        margin-bottom: 8px;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <h1>Hu Xiaoming</h1>
 
-  <p class="subtitle">
-    Researcher in Operations Research, Simulation Optimization, and Sequential Decision-Making
-  </p>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#publications">Publications</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#projects">Projects</a>
+    <a href="#cv">CV</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <p>
-    I am interested in best arm identification, simulation optimization,
-    reinforcement learning, and risk-constrained sequential decision-making.
-  </p>
+  <header>
+    <!-- If you have a photo, upload it to the repository and replace "profile.jpg" below. -->
+    <img src="profile.jpg" alt="Hu Xiaoming" class="profile-photo" />
 
-  <section>
+    <div>
+      <h1>Hu Xiaoming</h1>
+      <p class="subtitle">
+        Researcher in Operations Research, Simulation Optimization, and Sequential Decision-Making
+      </p>
+
+      <p>
+        I am interested in simulation optimization, reinforcement learning,
+        best arm identification, risk-constrained decision-making, and quantum algorithms.
+      </p>
+
+      <p>
+        Email: <a href="mailto:your_email@example.com">your_email@example.com</a><br />
+        GitHub: <a href="https://github.com/mingjiehu-OR">github.com/mingjiehu-OR</a><br />
+        Google Scholar: <a href="#">Google Scholar Profile</a>
+      </p>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      I am a researcher working on sequential decision-making and simulation optimization.
+      My research focuses on developing efficient algorithms for identifying high-quality
+      decisions under uncertainty, especially when performance and risk constraints are both important.
+    </p>
+
+    <p>
+      More broadly, I am interested in the intersection of operations research, machine learning,
+      stochastic simulation, and emerging computational methods.
+    </p>
+  </section>
+
+  <section id="research">
     <h2>Research Interests</h2>
     <ul>
       <li>Best Arm Identification</li>
       <li>Simulation Optimization</li>
       <li>Reinforcement Learning</li>
-      <li>Risk-constrained Decision-Making</li>
+      <li>Risk-constrained Sequential Decision-Making</li>
+      <li>Ranking and Selection</li>
       <li>Quantum Algorithms</li>
     </ul>
   </section>
 
-  <section>
+  <section id="publications">
     <h2>Publications</h2>
+
+    <h3>Journal Papers</h3>
     <ul>
       <li>
-        Author(s). Title of the paper. <em>Journal or Conference</em>, Year.
+        <span class="paper-title">Title of Your Paper.</span><br />
+        Hu Xiaoming, Coauthor Name, and Coauthor Name.<br />
+        <em>Journal Name</em>, Year.
+      </li>
+    </ul>
+
+    <h3>Working Papers</h3>
+    <ul>
+      <li>
+        <span class="paper-title">Title of Your Working Paper.</span><br />
+        Hu Xiaoming and Coauthor Name.<br />
+        Working paper, Year.
+      </li>
+    </ul>
+
+    <h3>Conference Papers</h3>
+    <ul>
+      <li>
+        <span class="paper-title">Title of Your Conference Paper.</span><br />
+        Hu Xiaoming and Coauthor Name.<br />
+        <em>Conference Name</em>, Year.
       </li>
     </ul>
   </section>
 
-  <section>
-    <h2>Contact</h2>
-    <p>Email: your_email@example.com</p>
-    <p>GitHub: <a href="https://github.com/mingjiehu-OR">github.com/mingjiehu-OR</a></p>
+  <section id="teaching">
+    <h2>Teaching</h2>
+    <ul>
+      <li>
+        Teaching Assistant, Course Name, University Name, Semester Year.
+      </li>
+      <li>
+        Teaching Assistant, Course Name, University Name, Semester Year.
+      </li>
+    </ul>
   </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <h3>Risk-constrained Best Arm Identification</h3>
+    <p>
+      This project studies sequential sampling algorithms for identifying the best alternative
+      while satisfying risk-related constraints.
+    </p>
+
+    <h3>Reinforcement Learning for Simulation Optimization</h3>
+    <p>
+      This project explores learning-based methods for adaptive sampling and decision-making
+      in stochastic simulation environments.
+    </p>
+
+    <h3>Quantum Algorithms for Estimation Problems</h3>
+    <p>
+      This project investigates how quantum estimation subroutines can be used to improve
+      the efficiency of certain computational tasks.
+    </p>
+  </section>
+
+  <section id="cv">
+    <h2>CV</h2>
+    <p>
+      My CV is available here:
+      <a href="cv.pdf">Download CV</a>.
+    </p>
+
+    <p class="small-text">
+      To use this link, upload your CV to the repository and name it <code>cv.pdf</code>.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+      Email: <a href="mailto:your_email@example.com">your_email@example.com</a>
+    </p>
+
+    <p>
+      GitHub:
+      <a href="https://github.com/mingjiehu-OR">https://github.com/mingjiehu-OR</a>
+    </p>
+
+    <p>
+      Google Scholar:
+      <a href="#">Google Scholar Profile</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>
+      Last updated: 2026.
+    </p>
+  </footer>
+
 </body>
 </html>
