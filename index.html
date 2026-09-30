@@ -1,282 +1,653 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Hu Xiaoming</title>
+  <title>Mingjie Hu | Operations Research</title>
+  <meta
+    name="description"
+    content="Mingjie Hu studies adaptive experiment design, quantum computing, and agent-based simulation for decision-making under uncertainty."
+  />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="canonical" href="https://mingjiehu-or.github.io/research/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mingjie Hu | Operations Research" />
+  <meta property="og:url" content="https://mingjiehu-or.github.io/research/" />
+  <meta
+    property="og:description"
+    content="Research in adaptive experiment design, quantum computing, and agent-based simulation."
+  />
+  <meta property="og:image" content="https://mingjiehu-or.github.io/research/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mingjie Hu | Operations Research" />
+  <meta
+    name="twitter:description"
+    content="Research in adaptive experiment design, quantum computing, and agent-based simulation."
+  />
+  <meta name="twitter:image" content="https://mingjiehu-or.github.io/research/og.png" />
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mingjie Hu",
+      "url": "https://mingjiehu-or.github.io/research/",
+      "image": "https://mingjiehu-or.github.io/research/profile.jpg",
+      "email": "mailto:23110690009@m.fudan.edu.cn",
+      "jobTitle": "Doctoral Student in Management Science",
+      "affiliation": [
+        { "@type": "Organization", "name": "Fudan University School of Management" },
+        { "@type": "CollegeOrUniversity", "name": "Georgia Institute of Technology" }
+      ],
+      "sameAs": [
+        "https://scholar.google.com/citations?user=PeH0uXgAAAAJ&hl=en",
+        "https://arxiv.org/search/?query=Mingjie+Hu&searchtype=author"
+      ]
+    }
+  </script>
 
   <style>
+    :root {
+      --text: #222;
+      --muted: #606060;
+      --line: #d9d9d9;
+      --link: #0056b3;
+      --background: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, Helvetica, sans-serif;
       max-width: 950px;
       margin: 0 auto;
       padding: 40px 24px;
+      color: var(--text);
+      background: var(--background);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
       line-height: 1.65;
-      color: #222;
-      background-color: #fff;
     }
 
-    header {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      margin-bottom: 36px;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 28px;
+    a {
+      color: var(--link);
+      text-decoration: none;
     }
 
-    .profile-photo {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      background-color: #eee;
+    a:hover,
+    a:focus-visible {
+      text-decoration: underline;
     }
 
-    h1 {
-      margin: 0;
-      font-size: 2.2em;
+    .skip-link {
+      position: absolute;
+      left: -9999px;
     }
 
-    h2 {
-      margin-top: 42px;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 6px;
-      color: #111;
-    }
-
-    h3 {
-      margin-bottom: 6px;
-    }
-
-    .subtitle {
-      color: #555;
-      margin-top: 8px;
-      margin-bottom: 10px;
+    .skip-link:focus {
+      top: 12px;
+      left: 12px;
+      z-index: 10;
+      padding: 8px 12px;
+      color: #fff;
+      background: var(--link);
     }
 
     nav {
       margin-bottom: 36px;
       padding-bottom: 16px;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid var(--line);
     }
 
     nav a {
-      margin-right: 18px;
-      color: #0056b3;
-      text-decoration: none;
+      display: inline-block;
+      margin-right: 20px;
       font-weight: 500;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    header {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 36px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--line);
     }
 
-    a {
-      color: #0056b3;
-      text-decoration: none;
+    .profile-photo {
+      width: 160px;
+      height: 190px;
+      flex: 0 0 auto;
+      object-fit: cover;
+      object-position: 50% 20%;
+      background: #eee;
+      border: 1px solid #e2e2e2;
+      border-radius: 4px;
     }
 
-    a:hover {
-      text-decoration: underline;
+    h1 {
+      margin: 0;
+      font-size: 2.25rem;
+      line-height: 1.2;
     }
 
-    ul {
-      padding-left: 22px;
+    h2 {
+      margin: 42px 0 18px;
+      padding-bottom: 6px;
+      color: #111;
+      font-size: 1.45rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h3 {
+      margin: 28px 0 10px;
+      font-size: 1.08rem;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .subtitle {
+      margin: 8px 0 10px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .appointment {
+      margin-bottom: 12px;
+    }
+
+    .links {
+      margin-bottom: 0;
+    }
+
+    ul,
+    ol {
+      padding-left: 24px;
+    }
+
+    .research-theme {
+      margin-bottom: 26px;
+    }
+
+    .research-theme:last-child {
+      margin-bottom: 0;
+    }
+
+    .research-theme h3 {
+      margin: 0 0 8px;
+    }
+
+    .research-intro {
+      margin-bottom: 28px;
+      font-size: 1.02rem;
+    }
+
+    .paper-topic {
+      margin-bottom: 34px;
+    }
+
+    .paper-topic:last-child {
+      margin-bottom: 0;
+    }
+
+    .paper-topic h3 {
+      margin-bottom: 14px;
+    }
+
+    .paper-list {
+      margin: 0;
+      padding-left: 23px;
+    }
+
+    .paper-list li {
+      margin-bottom: 20px;
+      padding-left: 3px;
+    }
+
+    .paper-list li:last-child {
+      margin-bottom: 0;
     }
 
     .paper-title {
-      font-weight: bold;
+      font-weight: 700;
+      text-underline-offset: 3px;
     }
 
-    .small-text {
-      color: #666;
-      font-size: 0.95em;
+    .authors,
+    .paper-meta {
+      display: block;
+    }
+
+    .paper-meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .talk-list,
+    .honor-list {
+      max-width: 820px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .talk-list > li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .talk-list > li:first-child {
+      padding-top: 0;
+    }
+
+    .talk-list > li:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .entry-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .entry-heading time,
+    .honor-list time,
+    .honor-date {
+      flex: 0 0 auto;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .venue-list {
+      margin: 4px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .honor-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 7px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .honor-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .teaching-list {
+      max-width: 680px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .teaching-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 7px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .teaching-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .course-level {
+      flex: 0 0 auto;
+      color: var(--muted);
     }
 
     footer {
       margin-top: 60px;
       padding-top: 20px;
-      border-top: 1px solid #ddd;
-      color: #666;
-      font-size: 0.95em;
+      color: var(--muted);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--line);
     }
 
     @media (max-width: 700px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
+      body {
+        padding: 28px 20px;
+      }
+
+      nav {
+        margin-bottom: 28px;
       }
 
       nav a {
-        display: inline-block;
-        margin-bottom: 8px;
+        margin-right: 14px;
+        margin-bottom: 6px;
+      }
+
+      header {
+        align-items: flex-start;
+        gap: 22px;
+      }
+
+      .profile-photo {
+        width: 125px;
+        height: 150px;
+      }
+
+      h1 {
+        font-size: 1.9rem;
+      }
+    }
+
+    @media (max-width: 520px) {
+      header {
+        flex-direction: column;
+      }
+
+      .profile-photo {
+        width: 150px;
+        height: 180px;
+      }
+
+      .entry-heading,
+      .honor-list li {
+        align-items: flex-start;
+        gap: 12px;
       }
     }
   </style>
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <nav>
+  <nav aria-label="Primary navigation">
     <a href="#about">About</a>
     <a href="#research">Research</a>
-    <a href="#publications">Publications</a>
+    <a href="#papers">Papers</a>
+    <a href="#talks">Talks</a>
     <a href="#teaching">Teaching</a>
-    <a href="#projects">Projects</a>
-    <a href="#cv">CV</a>
+    <a href="#honors">Honors</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <header>
-    <!-- If you have a photo, upload it to the repository and replace "profile.jpg" below. -->
-    <img src="profile.jpg" alt="Hu Xiaoming" class="profile-photo" />
+    <img
+      src="profile.jpg"
+      alt="Portrait of Mingjie Hu"
+      class="profile-photo"
+      width="1590"
+      height="2226"
+    />
 
     <div>
-      <h1>Hu Xiaoming</h1>
-      <p class="subtitle">
-        Researcher in Operations Research, Simulation Optimization, and Sequential Decision-Making
+      <h1>Mingjie Hu</h1>
+      <p class="subtitle">Doctoral Student in Management Science</p>
+      <p class="appointment">
+        School of Management, Fudan University<br />
+        Visiting Scholar, Georgia Tech ISyE (2025–2026)
       </p>
-
-      <p>
-        I am interested in simulation optimization, reinforcement learning,
-        best arm identification, risk-constrained decision-making, and quantum algorithms.
-      </p>
-
-      <p>
-        Email: <a href="mailto:your_email@example.com">your_email@example.com</a><br />
-        GitHub: <a href="https://github.com/mingjiehu-OR">github.com/mingjiehu-OR</a><br />
-        Google Scholar: <a href="#">Google Scholar Profile</a>
+      <p class="links">
+        Email: <a href="mailto:23110690009@m.fudan.edu.cn">23110690009@m.fudan.edu.cn</a><br />
+        Google Scholar: <a href="https://scholar.google.com/citations?user=PeH0uXgAAAAJ&amp;hl=en" target="_blank" rel="noreferrer">Mingjie Hu</a>
       </p>
     </div>
   </header>
 
-  <section id="about">
-    <h2>About</h2>
-    <p>
-      I am a researcher working on sequential decision-making and simulation optimization.
-      My research focuses on developing efficient algorithms for identifying high-quality
-      decisions under uncertainty, especially when performance and risk constraints are both important.
-    </p>
+  <main id="main-content">
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I am a fourth-year Ph.D. student in Management Science at the School of Management, Fudan University,
+        advised by
+        <a href="https://www.fdsm.fudan.edu.cn/en/2025/1106/c1044a24441/page.htm" target="_blank" rel="noreferrer">Professor Jian-Qiang Hu</a>.
+        From 2025 to 2026, I was a Visiting Scholar at the H. Milton Stewart School of Industrial
+        and Systems Engineering at Georgia Tech, where I worked with
+        <a href="https://www.isye.gatech.edu/users/enlu-zhou" target="_blank" rel="noreferrer">Professor Enlu Zhou</a>.
+        I also collaborate with
+        <a href="https://cec.gmu.edu/profiles/cchen9" target="_blank" rel="noreferrer">Professor Chun-Hung Chen</a>
+        and
+        <a href="https://mason.gmu.edu/~jxu13/home/index.htm" target="_blank" rel="noreferrer">Professor Jie Xu</a>
+        at George Mason University, and with
+        <a href="https://www.cityu.edu.hk/stfprofile/siyangao.htm" target="_blank" rel="noreferrer">Professor Siyang Gao</a>
+        at City University of Hong Kong. I received my bachelor's degree in Information Management
+        and Information Systems from Central South University in 2021.
+      </p>
+      <p><strong>I am currently on the academic job market.</strong></p>
+    </section>
 
-    <p>
-      More broadly, I am interested in the intersection of operations research, machine learning,
-      stochastic simulation, and emerging computational methods.
-    </p>
-  </section>
+    <section id="research">
+      <h2>Research</h2>
 
-  <section id="research">
-    <h2>Research Interests</h2>
-    <ul>
-      <li>Best Arm Identification</li>
-      <li>Simulation Optimization</li>
-      <li>Reinforcement Learning</li>
-      <li>Risk-constrained Sequential Decision-Making</li>
-      <li>Ranking and Selection</li>
-      <li>Quantum Algorithms</li>
-    </ul>
-  </section>
+      <p class="research-intro">
+        My research interests include adaptive experiment design, quantum computing, and agent-based
+        simulation.
+      </p>
 
-  <section id="publications">
-    <h2>Publications</h2>
+      <article class="research-theme">
+        <h3>Adaptive Experiment Design</h3>
+        <p>
+          I study how to collect data efficiently when observations are costly and the system is only
+          partly known. My work develops adaptive methods for best-arm identification, reinforcement
+          learning, LLM policy optimization, and operational experiments, with the goal of learning
+          the information most relevant to the final decision.
+        </p>
+      </article>
 
-    <h3>Journal Papers</h3>
-    <ul>
-      <li>
-        <span class="paper-title">Title of Your Paper.</span><br />
-        Hu Xiaoming, Coauthor Name, and Coauthor Name.<br />
-        <em>Journal Name</em>, Year.
-      </li>
-    </ul>
+      <article class="research-theme">
+        <h3>Quantum Computing</h3>
+        <p>
+          I study how quantum computing can improve stochastic optimization and simulation. My work
+          characterizes the performance limits of quantum algorithms for discrete simulation
+          optimization and develops algorithms that attain those limits.
+        </p>
+      </article>
 
-    <h3>Working Papers</h3>
-    <ul>
-      <li>
-        <span class="paper-title">Title of Your Working Paper.</span><br />
-        Hu Xiaoming and Coauthor Name.<br />
-        Working paper, Year.
-      </li>
-    </ul>
+      <article class="research-theme">
+        <h3>Agent-Based Simulation</h3>
+        <p>
+          My interests include calibrating LLM-based agents with real data, quantifying uncertainty in
+          their outputs, and using them for decision-making under uncertainty.
+        </p>
+      </article>
+    </section>
 
-    <h3>Conference Papers</h3>
-    <ul>
-      <li>
-        <span class="paper-title">Title of Your Conference Paper.</span><br />
-        Hu Xiaoming and Coauthor Name.<br />
-        <em>Conference Name</em>, Year.
-      </li>
-    </ul>
-  </section>
+    <section id="papers">
+      <h2>Research Papers</h2>
 
-  <section id="teaching">
-    <h2>Teaching</h2>
-    <ul>
-      <li>
-        Teaching Assistant, Course Name, University Name, Semester Year.
-      </li>
-      <li>
-        Teaching Assistant, Course Name, University Name, Semester Year.
-      </li>
-    </ul>
-  </section>
+      <article class="paper-topic">
+        <h3>Adaptive Experiment Design</h3>
+        <ol class="paper-list">
+          <li>
+            <a class="paper-title" href="https://doi.org/10.1016/j.ejor.2024.11.049" target="_blank" rel="noreferrer">Optimal Computation Budget Allocation with Gaussian Process Regression</a>
+            <span class="authors"><strong>Mingjie Hu</strong>, Jie Xu, Chun-Hung Chen, and Jian-Qiang Hu.</span>
+            <span class="paper-meta"><em>European Journal of Operational Research</em>, 322(1): 147–156, 2025.</span>
+          </li>
+          <li>
+            <a class="paper-title" href="https://icml.cc/virtual/2026/poster/63220" target="_blank" rel="noreferrer">Learning the Best Under Constraints: A Duality-Based Framework</a>
+            <span class="authors"><strong>Mingjie Hu</strong>, Enlu Zhou, and Jian-Qiang Hu.</span>
+            <span class="paper-meta"><em>International Conference on Machine Learning (ICML)</em>, 2026.</span>
+          </li>
+          <li>
+            <a class="paper-title" href="https://doi.org/10.2139/ssrn.5214504" target="_blank" rel="noreferrer">Multi-Task Best Arm Identification with Risk Constraints</a>
+            <span class="authors"><strong>Mingjie Hu</strong> and Jian-Qiang Hu.</span>
+            <span class="paper-meta">SSRN 5214504, 2026.</span>
+          </li>
+          <li>
+            <a class="paper-title" href="https://doi.org/10.2139/ssrn.5181423" target="_blank" rel="noreferrer">Rate-Optimal Strategy for Best Policy Identification in Reinforcement Learning</a>
+            <span class="authors"><strong>Mingjie Hu</strong>, Edward Huang, Jie Xu, Kan Wu, Jian-Qiang Hu, and Chun-Hung Chen.</span>
+            <span class="paper-meta">SSRN 5181423, 2025.</span>
+          </li>
+          <li>
+            <a class="paper-title" href="https://arxiv.org/abs/2605.28675" target="_blank" rel="noreferrer">Optimal Data Acquisition for Reinforcement Learning: A Large Deviations Perspective</a>
+            <span class="authors"><strong>Mingjie Hu</strong>, Jian-Qiang Hu, and Enlu Zhou.</span>
+            <span class="paper-meta">arXiv:2605.28675, 2026.</span>
+          </li>
+          <li>
+            <a class="paper-title" href="https://arxiv.org/abs/2609.24072" target="_blank" rel="noreferrer">The Implementation Cost of Fairness in Service Policy Selection</a>
+            <span class="authors">Junjie Liu, <strong>Mingjie Hu</strong>, Kejia Hu, Siyang Gao, and Jian-Qiang Hu.</span>
+            <span class="paper-meta">arXiv:2609.24072, 2026.</span>
+          </li>
+        </ol>
+      </article>
 
-  <section id="projects">
-    <h2>Projects</h2>
+      <article class="paper-topic">
+        <h3>Quantum Computing</h3>
+        <ol class="paper-list">
+          <li>
+            <a class="paper-title" href="https://doi.org/10.2139/ssrn.5948136" target="_blank" rel="noreferrer">Quantum Ranking and Selection under Stochastic Constraints</a>
+            <span class="authors"><strong>Mingjie Hu</strong>, Jian-Qiang Hu, and Tianxiang Wang.</span>
+            <span class="paper-meta">SSRN 5948136, 2025.</span>
+          </li>
+          <li>
+            <a class="paper-title" href="https://arxiv.org/abs/2604.26277" target="_blank" rel="noreferrer">Quantum Grover Adaptive Search for Discrete Simulation Optimization</a>
+            <span class="authors"><strong>Mingjie Hu</strong>, Jian-Qiang Hu, and Enlu Zhou.</span>
+            <span class="paper-meta">arXiv:2604.26277, 2026.</span>
+          </li>
+          <li>
+            <a class="paper-title" href="https://arxiv.org/abs/2609.33132" target="_blank" rel="noreferrer">Quantum Monte Carlo Tree Search with Fixed Confidence</a>
+            <span class="authors"><strong>Mingjie Hu</strong>, Jian-Qiang Hu, and Enlu Zhou.</span>
+            <span class="paper-meta">arXiv:2609.33132, 2026.</span>
+          </li>
+        </ol>
+      </article>
 
-    <h3>Risk-constrained Best Arm Identification</h3>
-    <p>
-      This project studies sequential sampling algorithms for identifying the best alternative
-      while satisfying risk-related constraints.
-    </p>
+      <article class="paper-topic">
+        <h3>Agent-Based Simulation</h3>
+        <ol class="paper-list">
+          <li>
+            <a class="paper-title" href="https://arxiv.org/abs/2604.08779" target="_blank" rel="noreferrer">Adaptive Simulation Experiment for Large Language Model Policy Optimization</a>
+            <span class="authors"><strong>Mingjie Hu</strong>, Siyang Gao, Jian-Qiang Hu, and Enlu Zhou.</span>
+            <span class="paper-meta">arXiv:2604.08779, 2026.</span>
+          </li>
+          <li>
+            <span class="paper-title">Large Language Model Policy Optimization via Simulation</span>
+            <span class="authors"><strong>Mingjie Hu</strong>, Siyang Gao, Jian-Qiang Hu, and Enlu Zhou.</span>
+            <span class="paper-meta"><em>Winter Simulation Conference (WSC)</em>, 2026.</span>
+          </li>
+        </ol>
+      </article>
+    </section>
 
-    <h3>Reinforcement Learning for Simulation Optimization</h3>
-    <p>
-      This project explores learning-based methods for adaptive sampling and decision-making
-      in stochastic simulation environments.
-    </p>
+    <section id="talks">
+      <h2>Selected Talks</h2>
+      <ul class="talk-list">
+        <li>
+          <div class="entry-heading">
+            <strong>Optimal Data Acquisition for Reinforcement Learning: A Large Deviations Perspective</strong>
+            <time datetime="2026">2026</time>
+          </div>
+          <ul class="venue-list">
+            <li>M&amp;SOM Conference, Harvard Business School, Boston, MA</li>
+            <li>INFORMS Annual Meeting, San Francisco, CA</li>
+          </ul>
+        </li>
+        <li>
+          <div class="entry-heading">
+            <strong>Large Language Model Policy Optimization via Simulation</strong>
+            <time datetime="2026">2026</time>
+          </div>
+          <ul class="venue-list">
+            <li>Winter Simulation Conference (WSC)</li>
+            <li>INFORMS Annual Meeting, San Francisco, CA</li>
+          </ul>
+        </li>
+        <li>
+          <div class="entry-heading">
+            <strong>Optimal Bayesian Learning of Markovian Models</strong>
+            <time datetime="2026">2026</time>
+          </div>
+          <ul class="venue-list">
+            <li>INFORMS Workshop on Data Science (DS 2026)</li>
+          </ul>
+        </li>
+        <li>
+          <div class="entry-heading">
+            <strong>Information-Efficient Design of Multi-Stage Operational Experiments</strong>
+            <time datetime="2026">2026</time>
+          </div>
+          <ul class="venue-list">
+            <li>INFORMS Annual Meeting, San Francisco, CA</li>
+          </ul>
+        </li>
+        <li>
+          <div class="entry-heading">
+            <strong>Rate-Optimal Strategy for Best Policy Identification in Reinforcement Learning</strong>
+            <time datetime="2025">2025</time>
+          </div>
+          <ul class="venue-list">
+            <li>INFORMS Annual Meeting, Atlanta, GA</li>
+            <li>INFORMS International Meeting, Singapore</li>
+          </ul>
+        </li>
+        <li>
+          <div class="entry-heading">
+            <strong>Optimal Computation Budget Allocation with Gaussian Process Regression</strong>
+            <time datetime="2024">2024</time>
+          </div>
+          <ul class="venue-list">
+            <li>INFORMS Annual Meeting, Seattle, WA</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
 
-    <h3>Quantum Algorithms for Estimation Problems</h3>
-    <p>
-      This project investigates how quantum estimation subroutines can be used to improve
-      the efficiency of certain computational tasks.
-    </p>
-  </section>
+    <section id="teaching">
+      <h2>Teaching</h2>
+      <h3>Teaching Assistant, Fudan University</h3>
+      <ul class="teaching-list">
+        <li><span>Operations Research</span><span class="course-level">Undergraduate</span></li>
+        <li><span>Stochastic Processes</span><span class="course-level">Graduate</span></li>
+        <li><span>Game Theory</span><span class="course-level">Undergraduate</span></li>
+        <li><span>Optimization Theory</span><span class="course-level">Undergraduate</span></li>
+      </ul>
+    </section>
 
-  <section id="cv">
-    <h2>CV</h2>
-    <p>
-      My CV is available here:
-      <a href="cv.pdf">Download CV</a>.
-    </p>
+    <section id="honors">
+      <h2>Selected Honors &amp; Awards</h2>
+      <ul class="honor-list">
+        <li>
+          <span>Poster Honorable Mention, INFORMS Simulation Society (I-SIM) Research Workshop</span>
+          <time datetime="2026">2026</time>
+        </li>
+        <li>
+          <span>Yamei Beyond Scholarship, Fudan University</span>
+          <span class="honor-date">2024–2025</span>
+        </li>
+        <li>
+          <span>National Scholarship, Fudan University</span>
+          <span class="honor-date">2024–2025</span>
+        </li>
+        <li>
+          <span>Outstanding Graduate, Central South University</span>
+          <time datetime="2021">2021</time>
+        </li>
+        <li>
+          <span>National Scholarship, Central South University</span>
+          <span class="honor-date">2018–2019</span>
+        </li>
+      </ul>
+    </section>
 
-    <p class="small-text">
-      To use this link, upload your CV to the repository and name it <code>cv.pdf</code>.
-    </p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>
-      Email: <a href="mailto:your_email@example.com">your_email@example.com</a>
-    </p>
-
-    <p>
-      GitHub:
-      <a href="https://github.com/mingjiehu-OR">https://github.com/mingjiehu-OR</a>
-    </p>
-
-    <p>
-      Google Scholar:
-      <a href="#">Google Scholar Profile</a>
-    </p>
-  </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:23110690009@m.fudan.edu.cn">23110690009@m.fudan.edu.cn</a></p>
+    </section>
+  </main>
 
   <footer>
-    <p>
-      Last updated: 2026.
-    </p>
+    <p>Last updated: September 2026.</p>
   </footer>
-
 </body>
 </html>
