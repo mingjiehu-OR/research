@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Quantum Monte Carlo tree search</title>
+  <desc id="desc">A search tree uses quantum estimates at the leaves and threshold pruning to select a root action. The highlighted branch and pruned branches are conceptual illustrations.</desc>
+  <rect width="640" height="400" rx="16" fill="#f7fafc"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#173c55">
+    <text x="32" y="49" font-size="27" font-weight="600">Quantum Monte Carlo tree search</text>
+    <text x="126" y="355" font-size="23" text-anchor="middle">Quantum estimates</text>
+    <text x="493" y="355" font-size="23" text-anchor="middle">Threshold pruning</text>
+  </g>
+  <g fill="none" stroke-width="3" stroke-linecap="round">
+    <path d="M320 112 139 187M139 205 75 280M139 205 202 280" stroke="#148b8e"/>
+    <path d="M320 112V187M320 205 268 280M320 205 373 280" stroke="#173c55"/>
+    <path d="M320 112 506 187M506 205 460 280M506 205 562 280" stroke="#bdcbd4"/>
+  </g>
+  <circle cx="320" cy="104" r="22" fill="#fff" stroke="#173c55" stroke-width="3"/>
+  <circle cx="139" cy="197" r="22" fill="#e2f3f1" stroke="#148b8e" stroke-width="3"/>
+  <circle cx="320" cy="197" r="18" fill="#fff" stroke="#173c55" stroke-width="3"/>
+  <circle cx="506" cy="197" r="18" fill="#eef2f5" stroke="#bdcbd4" stroke-width="3"/>
+  <g fill="#fff" stroke="#173c55" stroke-width="2.5"><circle cx="268" cy="291" r="17"/><circle cx="373" cy="291" r="17"/></g>
+  <g fill="#e2f3f1" stroke="#148b8e" stroke-width="2.5"><circle cx="75" cy="291" r="17"/><circle cx="202" cy="291" r="17"/></g>
+  <g fill="#eef2f5" stroke="#bdcbd4" stroke-width="2.5"><circle cx="460" cy="291" r="17"/><circle cx="562" cy="291" r="17"/></g>
+  <path d="m129 197 7 7 14-16" fill="none" stroke="#148b8e" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="none" stroke="#148b8e" stroke-width="2"><path d="M49 286C49 256 101 256 101 286M57 286C57 267 93 267 93 286M176 286C176 256 228 256 228 286M184 286C184 267 220 267 220 286"/></g>
+  <path d="M427 240H590" fill="none" stroke="#aabac6" stroke-width="2.5" stroke-dasharray="7 7"/>
+  <g stroke="#aabac6" stroke-width="2.5" stroke-linecap="round"><path d="m444 282 32 18M476 282 444 300M546 282l32 18M578 282 546 300"/></g>
+  <rect x="75" y="119" width="150" height="34" rx="17" fill="#e2f3f1"/>
+  <text x="150" y="143" text-anchor="middle" fill="#148b8e" font-family="Arial, Helvetica, sans-serif" font-size="21">Selected action</text>
+</svg>
