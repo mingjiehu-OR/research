@@ -250,9 +250,9 @@
     .paper-figure {
       display: block;
       overflow: hidden;
-      border: 1px solid #dce3e9;
-      border-radius: 5px;
-      background: #fbfcfe;
+      padding: 4px;
+      border: 1px solid transparent;
+      background: #fff;
     }
 
     .paper-figure:hover,
@@ -264,7 +264,15 @@
       display: block;
       width: 100%;
       height: auto;
-      aspect-ratio: 8 / 5;
+    }
+
+    .paper-figure-caption {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.75rem;
+      line-height: 1.4;
+      text-align: center;
     }
 
     .paper-summary {
@@ -583,8 +591,9 @@
         <h3>Quantum Computing</h3>
         <ol class="paper-list quantum-paper-list" role="list">
           <li>
-            <a class="paper-figure" href="nested-ranking-selection.svg" target="_blank" rel="noreferrer" aria-label="Enlarge the illustration for Quantum Nested Ranking and Selection under a Fixed Budget">
-              <img src="nested-ranking-selection.svg" width="640" height="400" loading="lazy" decoding="async" alt="Nested simulation feeds multiple elimination experts, whose recommendations are combined by plurality voting." />
+            <a class="paper-figure" href="nested-results.png" target="_blank" rel="noreferrer" aria-label="Enlarge the original numerical results for Quantum Nested Ranking and Selection under a Fixed Budget">
+              <img src="nested-results.png" width="1230" height="465" loading="lazy" decoding="async" alt="Table 1 from the paper: empirical probability of correct selection and 95% confidence intervals for AdaV-QRS, EA, and OCBA under different query budgets." />
+              <span class="paper-figure-caption">Numerical results &middot; Table 1</span>
             </a>
             <div>
               <a class="paper-title" href="https://doi.org/10.2139/ssrn.7632878" target="_blank" rel="noreferrer">Quantum Nested Ranking and Selection under a Fixed Budget</a>
@@ -597,8 +606,9 @@
             </div>
           </li>
           <li>
-            <a class="paper-figure" href="rate-optimal-quantum-dso.svg" target="_blank" rel="noreferrer" aria-label="Enlarge the illustration for Rate-Optimal Quantum Discrete Simulation Optimization">
-              <img src="rate-optimal-quantum-dso.svg" width="640" height="400" loading="lazy" decoding="async" alt="A fixed query budget is allocated to quantum estimation and successive elimination rounds before a final decision is selected." />
+            <a class="paper-figure" href="rate-optimal-results.png" target="_blank" rel="noreferrer" aria-label="Enlarge the original numerical results for Rate-Optimal Quantum Discrete Simulation Optimization">
+              <img src="rate-optimal-results.png" width="2025" height="1179" loading="lazy" decoding="async" alt="Figure 1 from the paper: expected optimality gap versus simulation replications for QUEST and MC-EST under a Bernoulli distribution, with error bars." />
+              <span class="paper-figure-caption">Expected optimality gap &middot; Figure 1</span>
             </a>
             <div>
               <a class="paper-title" href="https://arxiv.org/abs/2610.03360" target="_blank" rel="noreferrer">Rate-Optimal Quantum Discrete Simulation Optimization</a>
@@ -612,8 +622,9 @@
             </div>
           </li>
           <li>
-            <a class="paper-figure" href="quantum-mcts.svg" target="_blank" rel="noreferrer" aria-label="Enlarge the illustration for Quantum Monte Carlo Tree Search with Fixed Confidence">
-              <img src="quantum-mcts.svg" width="640" height="400" loading="lazy" decoding="async" alt="Quantum estimation of stochastic leaf values and pruning of a game tree identify a near-optimal move." />
+            <a class="paper-figure" href="qmcts-results.png" target="_blank" rel="noreferrer" aria-label="Enlarge the original numerical results for Quantum Monte Carlo Tree Search with Fixed Confidence">
+              <img src="qmcts-results.png" width="2000" height="697" loading="lazy" decoding="async" alt="Figure 1 from the paper: query complexity of QMCTS, CMCTS, and UGapE-MCTS as the inverse root gap and inverse precision increase, with classical-to-quantum query ratios." />
+              <span class="paper-figure-caption">Query complexity &middot; Figure 1</span>
             </a>
             <div>
               <a class="paper-title" href="https://arxiv.org/abs/2609.33132" target="_blank" rel="noreferrer">Quantum Monte Carlo Tree Search with Fixed Confidence</a>
@@ -627,8 +638,9 @@
             </div>
           </li>
           <li>
-            <a class="paper-figure" href="grover-adaptive-search.svg" target="_blank" rel="noreferrer" aria-label="Enlarge the illustration for Quantum Grover Adaptive Search for Discrete Simulation Optimization">
-              <img src="grover-adaptive-search.svg" width="640" height="400" loading="lazy" decoding="async" alt="A threshold oracle and Grover amplification successively narrow the set of candidate simulation decisions." />
+            <a class="paper-figure" href="grover-results.png" target="_blank" rel="noreferrer" aria-label="Enlarge the original numerical results for Quantum Grover Adaptive Search for Discrete Simulation Optimization">
+              <img src="grover-results.png" width="2000" height="1391" loading="lazy" decoding="async" alt="Figure 5 from the paper: average oracle queries for SOGAS and CSOGAS as the inverse optimality gap increases, with error bars." />
+              <span class="paper-figure-caption">Oracle queries &middot; Figure 5</span>
             </a>
             <div>
               <a class="paper-title" href="https://arxiv.org/abs/2604.26277" target="_blank" rel="noreferrer">Quantum Grover Adaptive Search for Discrete Simulation Optimization</a>
@@ -642,8 +654,9 @@
             </div>
           </li>
           <li>
-            <a class="paper-figure" href="constrained-ranking-selection.svg" target="_blank" rel="noreferrer" aria-label="Enlarge the illustration for Quantum Ranking and Selection under Stochastic Constraints">
-              <img src="constrained-ranking-selection.svg" width="640" height="400" loading="lazy" decoding="async" alt="Quantum estimation and elimination compare objectives and constraints to identify the best feasible alternative." />
+            <a class="paper-figure" href="constrained-results.png" target="_blank" rel="noreferrer" aria-label="Enlarge the original numerical results for Quantum Ranking and Selection under Stochastic Constraints">
+              <img src="constrained-results.png" width="2200" height="959" loading="lazy" decoding="async" alt="Figure 1 from the paper: empirical query complexity for QSEAL and classical algorithms under Bernoulli and Gaussian distributions, with error bars." />
+              <span class="paper-figure-caption">Empirical query complexity &middot; Figure 1</span>
             </a>
             <div>
               <a class="paper-title" href="https://doi.org/10.2139/ssrn.5948136" target="_blank" rel="noreferrer">Quantum Ranking and Selection under Stochastic Constraints</a>
