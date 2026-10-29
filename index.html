@@ -29,6 +29,7 @@
   <meta name="twitter:image" content="https://mingjiehu-or.github.io/research/og.png" />
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <script defer src="analytics.js"></script>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -388,6 +389,85 @@
       color: var(--muted);
       font-size: 0.95rem;
       border-top: 1px solid var(--line);
+    }
+
+    .analytics-settings {
+      padding: 0;
+      color: var(--link);
+      background: none;
+      border: 0;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .analytics-settings:hover {
+      text-decoration: underline;
+    }
+
+    .analytics-notice {
+      position: fixed;
+      bottom: 16px;
+      left: 50%;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      width: calc(100% - 32px);
+      max-width: 950px;
+      max-height: calc(100vh - 32px);
+      overflow: auto;
+      padding: 16px 20px;
+      background: #fff;
+      border: 1px solid #bbb;
+      border-radius: 4px;
+      box-shadow: 0 2px 12px #00000014;
+      transform: translateX(-50%);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .analytics-notice[hidden] {
+      display: none;
+    }
+
+    .analytics-notice p {
+      flex: 1;
+      margin: 0;
+    }
+
+    .analytics-actions {
+      display: flex;
+      flex: 0 0 auto;
+      gap: 8px;
+    }
+
+    .analytics-actions button {
+      min-width: 76px;
+      padding: 8px 12px;
+      color: var(--link);
+      background: #fff;
+      border: 1px solid var(--link);
+      border-radius: 3px;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .analytics-actions button:hover {
+      background: #f2f6fa;
+    }
+
+    button:focus-visible {
+      outline: 2px solid var(--link);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 600px) {
+      .analytics-notice {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        padding: 14px 16px;
+      }
     }
 
     @media (max-width: 700px) {
@@ -791,6 +871,15 @@
 
   <footer>
     <p>Last updated: October 2026.</p>
+    <p><a href="privacy.html">Privacy</a> · <button class="analytics-settings" id="analytics-settings" type="button" aria-controls="analytics-notice" hidden>Analytics settings</button> <span id="analytics-status" aria-live="polite"></span></p>
   </footer>
+
+  <div class="analytics-notice" id="analytics-notice" role="region" aria-label="Optional analytics" hidden>
+    <p>This site uses optional Google Analytics cookies to understand visits and paper-link clicks. Analytics starts only if you allow it. <a href="privacy.html">Privacy details</a>.</p>
+    <div class="analytics-actions">
+      <button id="analytics-allow" type="button">Allow</button>
+      <button id="analytics-decline" type="button">Decline</button>
+    </div>
+  </div>
 </body>
 </html>
